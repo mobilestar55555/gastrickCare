@@ -1,0 +1,75 @@
+<!--
+  Generated template for the ThirdPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <!--ion-navbar>
+    <ion-title>
+      Gastric Bypass Alternative
+    </ion-title>
+  </ion-navbar-->
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <img src="assets/images/navigate.png" class="navigator">
+  </div>
+  <h4>Intermediate results</h4>
+  <ion-grid>
+    <ion-row style="text-align:center; color:gray">
+      <ion-col col-4></ion-col>
+      <ion-col col-4 ><div style="background: #b3e3df; padding:2px">You</div></ion-col>
+      <ion-col col-4 ><div style="background: #b3e3df; padding:2px">Healthy</div></ion-col>
+    </ion-row>
+    <ion-row style="background: aliceblue; margin-top:5px; color:gray">
+      <ion-col col-4>Weight lbs</ion-col>
+      <ion-col col-4>{{submitData.weight}}</ion-col>
+      <ion-col col-4>{{submitData.height}}</ion-col>
+    </ion-row>
+    <ion-row style="background: aliceblue; margin-top:5px; color:gray">
+      <ion-col col-4>BMI</ion-col>
+      <ion-col col-4>91.4</ion-col>
+      <ion-col col-4>23</ion-col>
+    </ion-row>
+    <ion-row style="margin-top:5px; color:gray">
+      <ion-col col-4>Weight to lose</ion-col>
+      <ion-col col-8 style="background: #f10000; color:white; text-align:center"><span style="font-size:25px">359</span> <span style="font-size:14px">lbs</span></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h4 style="margin-top:40px">Continue...</h4>
+  <h3 style="margin-top:40px">Why am I overweight?</h3>
+  <h5 style="color:gray">Select all that applies</h5>
+
+  <div>
+    <ion-item class="text-color-gray">
+      <ion-label>Eating when stressed</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+
+    <ion-item class="text-color-gray">
+      <ion-label>Emotional eating</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+
+    <ion-item class="text-color-gray">
+      <ion-label>Medication</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+
+    <ion-item class="text-color-gray">
+      <ion-label>Night eating</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item class="text-color-gray">
+      <p>...</p>
+    </ion-item>
+  </div>
+
+  <button ion-button (click)="goNext()" style="width:80px; height:80px; border-radius: 50%; float:right; margin-top:30px">Next</button>
+  <button ion-button (click)="goPrev()" style="width:80px; height:80px; border-radius: 50%; float:left; margin-top:30px">Prev</button>
+
+</ion-content>
+

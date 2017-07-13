@@ -1,0 +1,126 @@
+<!--
+  Generated template for the SecondPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <!--ion-navbar>
+    <ion-title>
+      Gastric Bypass Alternative
+    </ion-title>
+  </ion-navbar-->
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <img src="assets/images/navigate.png" class="navigator">
+  </div>
+
+    <ion-item class="text-color-gray">
+      <ion-label>submitData.gender</ion-label>
+      <ion-select [(ngModel)]="submitData.gender" (ionChange)="genderInfo = {}">
+        <ion-option value="female">Female</ion-option>
+        <ion-option value="male">Male</ion-option>
+      </ion-select>
+    </ion-item>
+
+  <div *ngIf="submitData.gender == 'male'">
+    <ion-item class="text-color-gray">
+      <ion-label>Non-diabetic</ion-label>
+      <ion-checkbox [(ngModel)]="genderInfo.nondiabetic" checked="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item class="text-color-gray">
+      <ion-label>Pre/Diabetes</ion-label>
+      <ion-checkbox [(ngModel)]="genderInfo.prediabetes"></ion-checkbox>
+    </ion-item>
+    <div *ngIf="submitted && submitData.gender == 'male' && isEmpty(genderInfo)"  class="gfield_description validation_message" style="color: rgb(244, 67, 54); font-family: &quot;Open Sans&quot;;">This field is required.</div>
+  </div>
+
+  <div  *ngIf="submitData.gender == 'female'">
+    <ion-item class="text-color-gray">
+      <ion-label>Breastfeeding</ion-label>
+      <ion-checkbox [(ngModel)]="genderInfo.breastfeeding"></ion-checkbox>
+    </ion-item>
+
+    <ion-item class="text-color-gray">
+      <ion-label>Post-pregnancy</ion-label>
+      <ion-checkbox [(ngModel)]="genderInfo.postpregancy"></ion-checkbox>
+    </ion-item>
+
+    <ion-item class="text-color-gray">
+      <ion-label>Pre/Diabetes</ion-label>
+      <ion-checkbox [(ngModel)]="genderInfo.prediabetes"></ion-checkbox>
+    </ion-item>
+
+    <ion-item class="text-color-gray">
+      <ion-label>None</ion-label>
+      <ion-checkbox [(ngModel)]="genderInfo.none"></ion-checkbox>
+    </ion-item>
+
+    <div *ngIf="submitted && submitData.gender == 'female' && isEmpty(genderInfo)" class="gfield_description validation_message" style="color: rgb(244, 67, 54); font-family: &quot;Open Sans&quot;;">This field is required.</div>
+  </div>
+
+  <div class="separator-part">
+    <ion-item class="text-color-gray">
+      <ion-input type="text" placeholder="Age" [(ngModel)]="submitData.age"></ion-input>
+    </ion-item>
+    <div *ngIf="submitted && (!submitData.age)" class="gfield_description validation_message" style="color: rgb(244, 67, 54); font-family: &quot;Open Sans&quot;;">This field is required.</div>
+
+    <ion-item class="separator-item text-color-gray">
+      <ion-label>Your activity level</ion-label>
+      <ion-select [(ngModel)]="submitData.activityLevel">
+        <ion-option value="0">not really active</ion-option>
+        <ion-option value="1">moderately active</ion-option>
+        <ion-option value="2">on the move most of the day</ion-option>
+        <ion-option value="3">on the move and I also exercise</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="separator-item text-color-gray">
+      <ion-input type="text" placeholder="Your weight now" [(ngModel)]="submitData.weight" ></ion-input>
+    </ion-item>
+    <div *ngIf="submitted && (!submitData.weight)" class="gfield_description validation_message" style="color: rgb(244, 67, 54); font-family: &quot;Open Sans&quot;;">This field is required.</div>
+    <div *ngIf="submitted && (submitData.weight<165 || submitData.weight>600)" class="gfield_description validation_message" style="color: rgb(244, 67, 54); font-family: &quot;Open Sans&quot;;">Please enter a value between 165 and 600.</div>
+
+    <ion-item class="separator-item text-color-gray">
+      <ion-input type="text" placeholder="Your weight 6 months ago" [(ngModel)]="submitData.weightMonth" ></ion-input>
+    </ion-item>
+    <div *ngIf="submitted && (!submitData.weightMonth)" class="gfield_description validation_message" style="color: rgb(244, 67, 54); font-family: &quot;Open Sans&quot;;">This field is required.</div>
+    <div *ngIf="submitted && (submitData.weightMonth<165 || submitData.weightMonth>600)" class="gfield_description validation_message" style="color: rgb(244, 67, 54); font-family: &quot;Open Sans&quot;;">Please enter a value between 165 and 600.</div>
+
+    <ion-item class="separator-item text-color-gray">
+      <ion-label>Your height</ion-label>
+      <ion-select [(ngModel)]="submitData.height" >
+        <ion-option value="5.0">5.0</ion-option>
+        <ion-option value="5.1">5.1</ion-option>
+        <ion-option value="5.2">5.2</ion-option>
+        <ion-option value="5.3">5.3</ion-option>
+      </ion-select>
+    </ion-item>
+     <div *ngIf="submitted && (!submitData.height)" class="gfield_description validation_message" style="color: rgb(244, 67, 54); font-family: &quot;Open Sans&quot;;">This field is required.</div>
+
+    <div class="separator-part text-color-gray">
+      <ion-item class="text-color-gray">
+        <ion-label>No gluten or wheat allergy</ion-label>
+        <ion-checkbox [(ngModel)]="otherInfo.nogluten"></ion-checkbox>
+      </ion-item>
+
+      <ion-item class="text-color-gray">
+        <ion-label>No issue drinking 6 water bottles/day</ion-label>
+        <ion-checkbox [(ngModel)]="otherInfo.noissue"></ion-checkbox>
+      </ion-item>
+
+      <ion-item class="text-color-gray">
+        <ion-label>No kidney issues</ion-label>
+        <ion-checkbox [(ngModel)]="otherInfo.nokidney"></ion-checkbox>
+      </ion-item>
+    </div>
+     <div *ngIf="submitted && isEmpty(otherInfo)" class="gfield_description validation_message" style="color: rgb(244, 67, 54); font-family: &quot;Open Sans&quot;;">This field is required.</div>
+
+  </div>
+
+  <button ion-button (click)="goNext()" style="width:80px; height:80px; border-radius: 50%; float:right; margin-top:30px">Next</button>
+</ion-content>
+
